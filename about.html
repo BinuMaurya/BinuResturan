@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - BINU Restaurant</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: url('images/about-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+    }
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+     
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .about {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      margin: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px;
+    }
+    .gallery img {
+      width: 900px;
+      height: 300px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+    }
+/* Full-screen modal default hidden rahega */
+.full-screen-modal {
+  display: none; /* Default hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Full-screen image */
+.full-screen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* Close button style */
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+   .gallery-container {
+      text-align: center;
+    }
+    .gallery-container img {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+    }
+
+.content-section {
+      margin-bottom: 20px;
+
+  </style>
+</head>
+<body>
+    
+<!-- Sticky Header with Animated Text -->
+  <header class="header">
+    <span class="slider-text">WELCOME TO BINU RESTAURANT</span>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <br><br><br>
+  <section class="about"><br><br><br>
+
+    <h2>About Our Restaurant</h2>
+    <p>BINU Restaurant ek luxury aur family-friendly restaurant hai jo aapko delicious food aur comfortable dining experience provide karta hai.</p>
+    <h3>Facilities We Offer:</h3>
+
+<center>
+    <ul>
+      <li class="list"><b>Rooms Available:</b> Aap yahan stay bhi kar sakte hain luxury rooms me.</li>
+      <li class="list"><b>Party & Events:</b> Family aur friends ke liye special party arrangements.</li>
+      <li class="list"><b>Birthday Celebrations:</b> Special birthday decorations & food packages.</li>
+    </ul></center>
+  </section>
+<!-- Full-Screen Image Modal -->
+<div id="full-image-modal" class="full-screen-modal">
+  <span class="close-fullscreen" onclick="closeFullScreen()">&times;</span>
+  <img id="full-screen-img" src="" alt="Full Image">
+</div>
+
+<section class="gallery">
+  <h2>Birthday celebrated place</h2>
+<div class="gallery-container">
+<div style="text-align:center;">
+  
+<img src="images birthday.jpg" alt="Restaurant Image 1" onclick="openFullScreen(this.src)" style="display: block; margin: auto; max-width: 100%;"><br>
+
+   <div class="content-section">
+
+      <span id="shortContent">🎉 Birthday Celebration Room </span>
+
+    <span id="dots1">...</span>
+    <span id="more1" style ="display:none;">Birthday celebration room ek aisa special venue hai jahan aapke event ki har zarurat ko dhyan me rakhte hue customized setup diya jata hai. Is room me 20 se 50 guests tak ki capacity hoti hai aur yeh alag se private area provide karta hai jahan aap apni theme jaise ki cartoon, floral, ya luxury ke hisab se decoration kar sakti hain. Room ke andar round tables, long dining ya lounge setup ki vyavastha ki ja sakti hai, jahan table covers, centerpieces, aur candles se ek elegant ambiance banaya jata hai. Decoration me helium balloons, LED lights, confetti, aur customized backdrops ke saath photo booth ki bhi vyavastha hoti hai, jo guests ke liye yaadgar moments capture karne me madad karta hai. Entertainment ke liye live DJ, background music aur kids ya adults ke liye friendly games, magic show ya clown performance jaisi activities available hoti hain. Projector aur screen ki suvidha ke saath dance floor bhi setup kiya ja sakta hai, jisse event aur bhi lively ban jata hai. Catering options me buffet, plated service ya l ive counters jaisi facilities shamil hain, jahan veg, non-veg, aur kids special menu ke alawa special birthday cake arrangements bhi hoti hain. Room me WiFi, charging points, dedicated staff, photography-videography, free aur valet parking, aur advanced security systems jaisi modern facilities bhi provide ki jati hain. Booking ke liye advance reservation zaruri hai, jisme hourly rate ya package price ke hisab se additional services jaise themed invitations, return gifts aur customized party favors bhi include kiye ja sakte hain.
+Birthday room ka price kai factors par depend karta hai, jaise ki:
+
+Duration: Event kitne samay ke liye book karna hai (ek ghanta, aadha din ya poora din)?
+
+Decoration & Setup: Aapki chosen theme, decoration items, aur customized setups ka level.
+
+Catering & Menu: Food, drinks, aur special arrangements jaise birthday cake, snacks, etc.
+
+Facilities & Additional Services: Entertainment, photography, extra staff, aur security arrangements.
+
+Customization: Agar aapko extra personalized services chahiye to uska bhi alag se charge ho sakta hai.
+
+Hamare packages mein basic se le kar premium options available hain. Specific price janane ke liye aapko apne event ke requirements ke hisaab se inquiry karna hoga. Aap hamare customer service ya inquiry form ke through details share kar sakte hain, jisse aapko exact quotation mil sake.
+</span>
+    <button onclick="toggleContent('more1', 'toggleBtn1', 'dots1')" id="toggleBtn1">Show</button></p><br><br><br>
+
+
+
+<section class="gallery">
+  <h2>party celebrated room</h2>
+<div class="gallery-container">
+<div style="text-align:center;">
+
+  <img src="images restaurant1.jpg" alt="Luxury Room" onclick="openFullScreen(this.src)"style="display: block; margin: auto; max-width: 100%;"><br>
+
+
+<div class="content-section">
+
+      <span id="shortContent2">🎉 party Celebrate Room </span>
+
+    <span id="dots2">...</span>
+    <span id="more2" style ="display:none;">Party room ek aisa vibrant aur energetic space hai jahan par aap apne special occasions ko celebrate kar sakte hain. Is room ka design modern aur stylish hai, jo aapke event ko ek unique ambience deta hai. Yahan par spacious seating arrangement, adjustable lighting, aur sound system ki suvidha available hai, jo aapke party ko aur bhi lively banane mein madad karta hai. Chahe aap birthday, anniversary ya koi aur celebration organize kar rahe hon, yeh room har tarah ke events ke liye perfect hai, jismein aap indoor ya outdoor setup, customizable decor, aur themed installations ka bhi arrangement kar sakte hain.
+
+Iske alawa, party room mein state-of-the-art facilities jaise ki high-speed WiFi, multimedia projector, aur advanced audio system bhi available hain, jo aapke event ko ek professional touch dete hain. Catering services ke liye alag se arrangements kiye ja sakte hain jismein aapko wide variety of cuisines milengi – snacks, main course, aur desserts ke saath drinks aur cocktails ka bhi option hai. Special events ke liye dedicated staff, security arrangements, aur parking facilities bhi provide ki jaati hain, jisse aapka event hassle-free aur memorable ban sake.</span>
+ 
+<button onclick="toggleContent('more2', 'toggleBtn2', 'dots2')" id="toggleBtn2">Show</button><br><br><br>
+
+
+<section class="gallery">
+  <h2>Dining room</h2>
+<div class="gallery-container">
+<div style="text-align:center;">
+  <img src="images room1.jpg" alt="Party Hall" onclick="openFullScreen(this.src)"style="display: block; margin: auto; max-width: 100%;"><br>
+
+<div class="content-section">
+
+      <span id="shortContent2">🎉 Dining Room </span>
+
+    <span id="dots3">...</span>
+    <span id="more3" style ="display:none;">Dining room ek elegant aur spacious space hai jahan par aapko ek refined aur comfortable dining experience milta hai. Is room ka design modern architecture aur traditional elements ka perfect combination hai, jismein warm lighting, soft background music, aur tasteful decor ka istemal kiya gaya hai. Yahan ki seating arrangement aise design ki gayi hai jisse privacy ke saath-saath group dining ka maza bhi liya ja sake. Har table par stylish centerpieces aur exquisite tableware use ki gayi hai, jo aapke dining experience ko aur bhi special bana deti hai.
+
+Iske alawa, dining room mein world-class cuisine serve ki jati hai, jismein local aur international dishes ka behtareen collection available hai. Professional aur courteous staff aapki har zarurat ka khayal rakhte hain, taaki aapko ek seamless aur memorable dining experience mile. Special dietary requirements ke liye bhi customized menu options provide kiye jate hain, aur live kitchen stations se freshly prepared dishes ka tadka aapke dining table par hi lag jata hai. Yeh sab facilities dining room ko ek premium experience banati hain, jo har visitor ko bar-bar aane par majboor kar deti hain.
+</span>
+<button onclick="toggleContent('more3', 'toggleBtn3', 'dots3')" id="toggleBtn3">Show</button><br><br><br>
+
+<section class="gallery">
+  <h2>Dining room</h2>
+<div class="gallery-container">
+<div style="text-align:center;">
+
+
+  <img src="birthday celebration.jpg" alt="birthday celebration" onclick="openFullScreen(this.src)" style="display: block; margin: auto; max-width: 100%;"><br>
+
+<div class="content-section">
+
+      <span id="shortContent2">🎉 Deluxe Room</span>
+
+    <span id="dots4">...</span>
+    <span id="more4" style ="display:none;">Deluxe Room ek premium hotel room hai jismein aapko luxury, comfort aur modern amenities ka behtareen combination milta hai. Is room ka interior sophisticated design aur elegant decor se sajaya gaya hota hai, jismein high-quality furnishings, plush bedding aur ambient lighting shamil hote hain. Deluxe Room mein spacious layout, comfortable seating area, work desk aur high-speed internet connection jaise facilities di jati hain, jo business travelers aur leisure guests dono ke liye ideal environment create karti hain.
+
+Iske alawa, Deluxe Room mein private en-suite bathroom, premium toiletries, mini-bar aur entertainment options (jaise flat-screen TV aur cable services) available hote hain. Room ka design aur ambiance is tarah se tayar kiya gaya hota hai ki aapko ek relaxed aur rejuvenating stay ka experience mile, jisse aap apne din ke thakawat ko door kar sakein. Yeh room un logon ke liye perfect choice hai jo apne stay ke dauran luxury aur convenience ka maza lena chahte hain.
+</span>
+
+<button onclick="toggleContent('more4', 'toggleBtn4', 'dots4')" id="toggleBtn4">Show</button><br><br><br>
+
+
+
+</section>
+
+ 
+<script>
+      function openFullScreen(imgSrc) {
+  const fullScreenModal = document.getElementById('full-image-modal');
+  const fullScreenImg = document.getElementById('full-screen-img');
+  
+  fullScreenImg.src = imgSrc;
+  fullScreenModal.style.display = 'flex';
+}
+
+function closeFullScreen() {
+  document.getElementById('full-image-modal').style.display = 'none';
+}
+
+function toggleContent(moreId, btnId, dotsId){
+  var dots = document.getElementById(dotsId);
+  var moreText = document.getElementById(moreId);
+  var btn = document.getElementById(btnId);
+  
+  // Agar extra content chhupa hai, to dikhaye
+  if(moreText.style.display === "none"){
+    moreText.style.display = "inline";
+    btn.innerHTML = "Hide";
+    dots.style.display = "none";
+  } 
+  // Agar extra content dikh raha hai, to chhupa de
+  else {
+    moreText.style.display = "none";
+    btn.innerHTML = "Show";
+    dots.style.display = "inline";
+  }
+}
+
+
+  </script>
+  <footer>
+    <p>&copy; 2025 BINU Restaurant. All rights reserved.</p>
+  </footer>
+</body>
+</html>

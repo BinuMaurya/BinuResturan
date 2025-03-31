@@ -1,0 +1,203 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Sticky Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 25px 0; /* Header ko bada kiya */
+  font-size: 28px; /* Text ko bada kiya */
+  font-weight: bold;
+  z-index: 1000;
+  text-align: center;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center; /* Center align */
+  align-items: center;
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 30px; /* Space between items */
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  font-size: 18px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff6600; /* Hover effect */
+}
+
+/* Animated Text */
+.slider-text {
+  display: block; /* Block me dikhana taki upar header ke beech me aaye */
+  font-weight: bold;
+  font-size: 32px;
+  text-shadow: 3px 3px 8px rgba(255, 255, 255, 0.8); /* Shadow effect */
+  animation: slideText 3s infinite alternate ease-in-out;
+}
+
+/* Keyframe Animation */
+@keyframes slideText {
+  from {
+    transform: translateX(-20px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(20px);
+    opacity: 1;
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('hero-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 100px; /* Adjusted to fit new header */
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.btn {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.5s;
+}
+
+.btn:hover {
+  background-color: #e65c00;
+}
+
+/* Content */
+.content {
+  margin-top: 80px;
+  padding: 20px;
+  font-size: 18px;
+  height: 2000px;
+  background: #f4f4f4;
+}
+.like-container {
+    margin: 20px;
+    text-align: center;
+}
+
+#likeBtn {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.rating-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.stars {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.star {
+    color: gray;
+}
+
+.star:hover, .star.active {
+    color: gold;
+}
+
+.feedback-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#feedbackText {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#submitFeedback {
+    padding: 10px 20px;
+    border: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}

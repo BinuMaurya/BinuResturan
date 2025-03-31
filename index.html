@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY Restaurant - Home</title>
+  <link rel="stylesheet" href="styles.css">
+<style>
+     body {
+      background: url('hero-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+ body, h1, h2, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Fixed header with proper z-index */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      z-index: 1000;
+    }
+    
+    nav ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    
+    /* Hero section improvements */
+    .hero {
+      position: relative;
+      background: url('hero-bg.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Dark overlay for better text readability */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+    }
+    
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .hero-content p {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      background-color: #ff9900;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    
+    /* Content sections with proper spacing */
+    .intro, .content {
+      max-width: 800px;
+      margin: 140px auto 40px; /* 140px margin-top to clear fixed header and hero */
+      padding: 20px;
+      background: white;
+      border-radius: 5px;
+    }
+    
+</style>
+</head>
+<body>
+  <!-- Sticky Header with Animated Text -->
+  <header class="header">
+    <span class="slider-text">WELCOME TO BINU RESTAURANT</span>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to my resturant</h1>
+      <p>Experience the best culinary delights</p>
+      <a href="#intro" class="btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="intro" id="intro">
+    <h2>About Our Restaurant</h2>
+    <p>
+      Our restaurant offers a perfect blend of traditional flavors and modern cuisine.
+      We use fresh ingredients to create memorable dishes that delight your senses.
+    </p>
+  </section>
+ 
+
+<!-- Like Button -->
+<div class="like-container">
+    <button id="likeBtn">❤️ Like (<span id="likeCount">0</span>)</button>
+</div>
+
+<!-- Rating System -->
+<div class="rating-container">
+    <h3>Rate This Website</h3>
+    <div class="stars">
+        <span class="star" data-rating="1">★</span>
+        <span class="star" data-rating="2">★</span>
+        <span class="star" data-rating="3">★</span>
+        <span class="star" data-rating="4">★</span>
+        <span class="star" data-rating="5">★</span>
+    </div>
+    <p id="ratingResult">No rating yet</p>
+</div>
+
+<!-- Feedback Form -->
+<div class="feedback-container">
+    <h3>Give Your Feedback</h3>
+    <textarea id="feedbackText" placeholder="Write your feedback..."></textarea>
+    <button id="submitFeedback">Submit</button>
+    <p id="feedbackMessage"></p>
+</div>
+
+<!-- JavaScript File -->
+<script src="script.js"></script>
+
+  <!-- Content Section -->
+  <section class="content">
+    <p><strong>Enjoy our delicious food in a cozy atmosphere.</strong></p><br><br>
+<p>Why is social media important for restaurants?<br>
+Social media is important because your restaurant guests are online. Social media helps define your brand and lets you communicate with your guests.
+
+<p><br>Here are 4 reasons why your restaurant should start a social media marketing plan:</p><br><br>
+
+<p><strong><span style="color:blue;">1. Boosts guest loyalty and trust</span></strong></p>
+
+<p>Social media is a great way to be transparent with your guests. Allowing them to leave reviews, ask questions and share in your day-to-day makes them feel a part of something bigger – your restaurant. Creating that type of trust and loyalty will lead to repeat customers.<br></p>
+
+<p><strong><span style="color:blue;">2. Turns guests into ambassadors</span></strong><br><p>
+
+<p>There’s nothing better than free advertising. Encouraging your guests to post pictures of their food and experience is a guaranteed way to increase interest in your restaurant. Remember that you can also use this content (UGC) to share on your site. And encourage guests to use a hashtag # when they post images from your restaurant.</p>
+
+<p><strong><span style="color:blue;">3. It’s free advertising</span></strong></p>
+
+<p>Speaking of free marketing, social media doesn’t cost a dime (unless you run paid ads). For most purposes, you can use Instagram, Twitter, Pinterest and Facebook for free. Combine that with #2 and you’ve got a free social media marketing strategy.</p>
+
+<strong><span style="color:blue;">4. Keeps you connected with your guests</span></strong>
+
+<p>This is probably the most important reason for using social media – it connects you with your guests.</p>
+
+<p>The average person spends around 145 minutes per day on social media. If you want to reach them with up-to-date information on new menu items, special events, etc. The best way is to meet them where they are – online.</p>
+
+
+<p>Why is social media important for restaurants? Here are the top 3 reasons from Superb</p> 
+What social media platforms do restaurants use?<br><br>
+<p>There are several social media platforms and channels that restaurants can use to build awareness and increase traffic. We've listed the top 6 that you should include in your restaurant social media marketing below.</p>
+
+<p><strong>Instagram for restaurants</strong>
+Regular feed: Probably the best platform for any restaurant to use in terms of aesthetics. Instagram revolves around pictures and is a great way to show the visual theme and feel of your restaurant You can create a profile with a creative grid of pictures. Take a look at our Instagram here for inspiration.</p><br>
+
+<p>Additionally, Instagram is a great place to create a community around your restaurant. The following you generate will be full of people who appreciate your aesthetics and possibly become great customers.</p>
+
+<p><b>Instagram Stories:</b> Instagram also has a feature called Instagram Stories – this is a feature that lets you create small stories with pictures and videos that’ll be shown for 24 hours only, in the style of Snapchat.</p>
+
+<p>Instagram Stories has become vastly more popular than Snapchat. If you don’t know whether to choose Instagram Stories or Snapchat, we recommend Instagram Stories, simply because more people use it worldwide – and it keeps the number of platforms for your restaurant down.<br></p>
+
+<p><strong>Facebook for restaurants</strong>
+Regular feed: The mother of all Social Media Platforms and somehow still relevant. As mentioned above, your Facebook account can have many different roles. It can be your announcement channel, your second customer service, your information page or all of the above. You can post competitions, special offers, pictures and stories from the restaurant. The possibilities are endless.</p>
+
+<p>The only thing that really matters is that you have an updated Facebook page. Visibility is key. As with Instagram, your Facebook following is a part of building your community and the bigger your community, the bigger the reach.</p>
+
+<p><b>Facebook Stories:</b> This can be used in the same way as your Instagram Stories. This is not a must since the number of users is very low compared to both Instagram Stories and Snapchat Stories.<br><br></p>
+
+<p><b>Snapchat for restaurants</b><br><br>
+<b>Snapchat Stories:</b> Similar features are offered on Instagram and Facebook, but a Snapchat account could benefit you if you’re interested in creating an intimate community around your restaurant. This platform is very personal and can depict everyday fun in the kitchen.<p>
+
+<p><b>Twitter for restaurants</b>
+Tweets: Twitter is a place where you can express whatever you feel like in 280 characters or less. This makes Twitter a varied platform – you can use it for everything from personal tweets from chefs about their private lives to restaurant tweets about happenings in the restaurant.</p>
+
+<p>It’s a way of creating a community around your restaurant, keeping people in the loop of what’s happening at your restaurant, setting yourself in the same company as chefs or restaurants that you admire by tweeting at them, or simply retweeting content that you like.</p>
+
+<p><b>Linkedin for restaurants</b>
+Connecting: Your restaurant is a business and using this platform to connect with your professional network can strengthen your brand. Furthermore, giving your employees a place to connect to on Linkedin can strengthen your internal community and make your brand visible throughout their network.</p>
+
+<p><b>Pinterest for restaurants</b><br>
+Pinterest is another social media platform that requires you to stay active. Experts suggest that you pin up to 11 times a day. Unlike Twitter, it is much more visual. For starters, you could create a recipe board or a special events board to get people involved in what you have to offer.</p>
+
+<p><strong><span style="color:blue;">How do you promote a restaurant on social media?</span></strong><br>
+Set up a business profile on Facebook, Instagram, Twitter or Pinterest for your restaurant.</p>
+<p>Add your logo so guests can easily recognise you.<br>
+<p>Update your bio or profile and link to your main website. A great bio includes your name, address, hours of operation and contact information.</p>
+<p>From there, start posting. Use the 10 social media content ideas above and have fun!<br>
+How often should restaurants post on social media?<br></p>
+<p>This is the question that plagues all restaurant owners and managers – how often should we post on social media?<br></p>
+
+<p>There’s a sweet spot between engaging your audience and driving them crazy, but that sweet spot is often difficult to find. To help, we scoured the research and asked our own social media expert for help to discover the right number of times a day to post for each social media platform.
+<br><br></p>
+<p>Instagram – post between 3-7 times per week (IG Stories can be more frequent)
+Facebook – post 1 time a day
+Twitter – post max 5 tweets a day
+Pinterest – 3 pins per day
+Start with these suggestions and see how your followers respond. If you feel they want more, give them more. If you notice that engagement (how many likes, comments, etc.) decreases when you post too often, then back off for a bit.<br></p>
+
+<p><br>The most important part is that you post content that celebrates your restaurant and engages with both current and future customers.<br></p>
+
+<p><br>There are plenty of free social media management, scheduling and design tools that can make your job and your life much easier. Take a look at 14 of the best ones here.</p>
+  </section>
+ </body>
+</html>

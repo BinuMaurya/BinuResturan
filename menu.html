@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BINU Restaurant - Menu</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+    }
+    
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .menu-item {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 12px rgba(255, 204, 0, 0.8);
+    }
+
+    .menu-item img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+    }
+
+    .menu-item h2 {
+      font-size: 1.2em;
+    }
+
+    .price {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #ff6600;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background:white;
+      padding: 20px;
+      text-align:center;
+      width: 350px;
+      height:350px;
+      position: relative;
+    }
+
+    .modal img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+     
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+#cart-popup {
+      display: none;
+      position: fixed;
+      top: 80px; /* Header ke niche */
+      left: 50%;
+      transform: translateX(-50%);
+      background: green;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 2000;
+      font-size: 16px;
+    }
+.order-btn {
+      background: #ff6600;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+header h1, .menu h1 {
+  color: white;
+}
+img {
+  width: 20px;
+  height: auto;
+  
+}
+.menu-item {
+  text-align: center;
+}
+ .bold-text {
+    font-weight: 1000; /* Maximum Boldness */
+    text-decoration: underline;
+    font-style: italic;
+  }
+ .super-bold {
+    font-weight: 900;
+    text-transform: uppercase; /* Sare letters Capital me hon */
+    color: #ff0000; /* Red Color for Highlight */
+    text-shadow: 3px 3px 5px black; /* Shadow Effect */
+    font-style: italic;
+    text-decoration: underline;
+  }
+ h1 {
+  color: darkblue;
+  text-shadow: 1px 1px 2px white;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+     <h1>BINU RESTURANT</h1>
+<!-- Sticky Header with Animated Text -->
+  <header class="header">
+    <span class="slider-text">WELCOME TO BINU RESTAURANT</span>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<br><br><br><br><br>
+
+  <section class="menu">
+<!-- Sticky Header with Animated Text -->
+  <h1 style="color:white;"text-shadow: 2px 2px 4px darkblue;"class="h1">
+    <span class="slider-text">
+ "Ek chakhna bas, ho gaya pyaar ka izhaar,<br>
+Har visit yahan, ban jaye ek sweet ikraar.<br>
+Is offer mein chhupi hai flavor ki zabardast bahaar,<br>
+Dil se dil milte, yaadgar ho har baar."</span>
+    <div class="menu-container" id="menu-container"></div>
+  </section>
+<div id="cart-popup">Item added to cart successfully!</div>
+
+  <!-- Modal for Pop-up Message -->
+  <div id="popup-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modal-img" src="" alt="">
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p> <!-- Corrected ID -->
+    <p class="price" id="modal-price"></p>
+    <p id="modal-offer"></p> <!-- Offer text yahan show hoga -->
+<button class="order-btn" id="modal-addToCart">Add to Cart</button>
+  </div>
+</div>
+
+  <script>
+    const menuItems = [
+      ['Frankie', 'frankie.jpg', 'Spicy & crispy roll.', '₹149','Buy 1 Get 1 Free!'],
+      ['Pav Bhaji', 'pav-bhaji.jpg', 'Delicious buttery pav.', '₹99','Flat 10% Off Today!'],
+      ['Paneer Pizza', 'paneer-pizza.jpg', 'Cheesy paneer pizza.', '₹249','20% Off on Large Pizza!'],
+      ['Tea', 'tea.jpg', 'Refreshing Indian tea.', '₹29','Add ₹10 and Get a Biscuit Free!'],
+      ['Coffee', 'coffee.jpg', 'Rich and aromatic coffee.', '₹49','Free Cookie with Every Coffee!'],
+      ['Noodles', 'noodles.jpg', 'Delicious stir-fried noodles.', '₹129','Extra Cheese Free on Medium & Large'],
+      ['Manchurian', 'manchurian.jpg', 'Spicy Manchurian balls.', '₹139','10% Off on Orders Above ₹200!'],
+      ['Pani Puri', 'pani-puri.jpg', 'Tangy and crispy.', '₹59','Extra 2 Pani Puris Free!'],
+      ['Momos', 'momos.jpg', 'Steamed or fried dumplings.', '₹99','Flat ₹20 Off Today Only!'],
+      ['Chaat', 'chaat.jpg', 'Spicy, tangy chaat.', '₹79','10% Off for Students!'],
+      ['French Fries', 'french-fries.jpg', 'Crispy golden fries.', '₹89','Buy Medium, Get Large!'],
+      ['Italian Dosa', 'italian-dosa.jpg', 'Fusion dosa.', '₹149','Free Chutney Refill!'],
+      ['Mendu Vada', 'mendu-vada.jpg', 'South Indian vada.', '₹59','Flat ₹10 Off on 2 Plates!'],
+      ['Cutlet', 'cutlet.jpg', 'Spiced cutlet.', '₹69','20% Off on 3 or More!'],
+      ['Burger', 'burger.jpg', 'Juicy and cheesy burger.', '₹129','Buy 1 Burger, Get Fries at ₹29!']
+    ];
+
+    const menuContainer = document.getElementById('menu-container');
+
+    menuItems.forEach(item => {
+      let div = document.createElement('div');
+      div.classList.add('menu-item');
+div.setAttribute('onclick', `openModal('${item[0]}', '${item[1]}', '${item[2]}', '${item[3]}', '${item[4]}')`);
+      div.innerHTML = `
+        <img src="${item[1]}" alt="${item[0]}">
+        <h2>${item[0]}</h2>
+        <span class="price">${item[3]}</span>
+      <button class="order-btn">Add to Cart</button>
+  `;
+      div.onclick = () => openModal(item[0], item[1], item[2], item[3],item[4]);
+      menuContainer.appendChild(div);
+    });
+function addToCart(itemName) {
+      const cartPopup = document.getElementById('cart-popup');
+      cartPopup.innerText = `${itemName} added to cart successfully!`;
+      cartPopup.style.display = 'block';
+
+      setTimeout(() => {
+        cartPopup.style.display = 'none';
+      }, 2000);
+    }
+
+function openModal(name, imgSrc, description, price, offer) {
+  document.getElementById('modal-img').src = imgSrc;  
+  document.getElementById('modal-title').innerText = name;  
+  document.getElementById('modal-desc').innerText = description;  
+  document.getElementById('modal-price').innerText = price;  
+  document.getElementById('modal-offer').innerText = offer; // Yeh line sahi kar di  
+  
+ const addToCartButton = document.getElementById('modal-addToCart');
+  addToCartButton.onclick = function () {
+    addToCart(name);
+  };
+
+  document.getElementById('popup-modal').style.display = 'flex'; // Sahi modal ID
+}
+
+    function closeModal() {
+      document.getElementById('popup-modal').style.display = 'none';
+    }  
+
+  </script>
+</body>
+</html>   
